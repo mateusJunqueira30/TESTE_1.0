@@ -1,12 +1,23 @@
-dict = {"STALKEAR": "investigar a vida de alguém online",
-        "CRINGE": "algo vergonhoso ou constrangedor",
-        "VDD": "abreviação da palavra verdade",
-        "BISCOITAR": "postar algo apenas para chamar a atenção",
-        "HATER": "pessoa que está constantemente criticando os outros",
-        "VLW": "abreviação da palavra valeu",
-        "FLOP": "Algo que falhou ou fracassou"}
+import discord
+from discord.ext import commands
+# A variável intents armazena as permissões do bot
+intents = discord.Intents.default()
+# Ativar a permissão para ler o conteúdo das mensagens
+intents.message_content = True
+# Criar um bot e passar as permissões
+bot = commands.Bot(command_prefix='$', intents=intents)
 
-q1 = input("digite uma giria atual, em letras maiusculas para saber o significado")
+@bot.event
+async def on_ready():
+    print(f'estamos logados com {bot.user}')
 
-if q1 in dict.keys():
-           print(dict.keys[q1])
+@bot.command()
+async def hello(ctx):
+    await ctx.send(f'ola, eu sou um bot {bot.UserWarning}')
+
+@bot.command()
+async def moeda(ctx)
+    resultado = flip()
+    await ctx.reply(resultado)
+
+bot.run("")
